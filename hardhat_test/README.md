@@ -1,15 +1,24 @@
-# Sample Hardhat Project
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
+https://github.com/LIYANG-UST/bnbcamp0322/blob/main/contracts/MyToken.sol
 
 ```shell
 npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+
+# init
 npx hardhat node
-npx hardhat run scripts/deploy.ts
+
+# deploy with scripts
+npx hardhat run scripts/deploy.ts --network localhost
+
+# run ut
+npx hardhat test
+
+# ?
+REPORT_GAS=true npx hardhat test
+
+# tasks
+npx hardhat deploy --network localhost
+npx hardhat mint --network localhost
+npx hardhat burn --network localhost
+npx hardhat balance --network localhost --address ${address}
 ```
 
-https://github.com/LIYANG-UST/bnbcamp0322/blob/main/contracts/MyToken.sol
