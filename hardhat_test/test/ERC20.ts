@@ -27,7 +27,7 @@ describe("MyToken Test", function () {
         const { myToken } = await loadFixture(deployMyTokenFixture);
   
         expect(await myToken.name()).to.equal("MyToken");
-        expect(await myToken.symbol()).to.equal("MYT");
+        expect(await myToken.symbol()).to.equal("MTK");
       });
   
       it("should have the correct owner after deployment", async function () {
@@ -65,7 +65,7 @@ describe("MyToken Test", function () {
   
         await myToken.connect(alice).mint();
         await expect(myToken.connect(alice).mint()).to.be.revertedWith(
-          "Already minted"
+          "Already minted."
         );
       });
   
@@ -87,7 +87,7 @@ describe("MyToken Test", function () {
         await myToken.connect(alice).mint();
         await expect(
           myToken.connect(alice).burn(alice.address)
-        ).to.be.revertedWith("Only owner");
+        ).to.be.revertedWith("Only owner can call this function.");
       });
     });
   
@@ -97,7 +97,7 @@ describe("MyToken Test", function () {
   
         await expect(
           myToken.connect(alice).transfer(dev.address, 10)
-        ).to.be.revertedWith("Transfer not allowed");
+        ).to.be.revertedWith("Transfer not allowed.");
       });
     });
   });
