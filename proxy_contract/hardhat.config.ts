@@ -41,12 +41,10 @@ const config: HardhatUserConfig = {
     localhost: {
       url: "http://127.0.0.1:8545",
     },
-    bnbtest: {
-      url: process.env.BNBTest_URL,
-      accounts: process.env.BNB_PRIVATE_KEY !== undefined
-            ? [process.env.BNB_PRIVATE_KEY]
-            : [],
-      chainId: 97,
+    sepolia: {
+      url: "https://sepolia.infura.io/v3/" + process.env.INFURA_KEY,
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     // bnb: {
     //   url: process.env.BNB_URL,
